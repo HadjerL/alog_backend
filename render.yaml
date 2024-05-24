@@ -1,0 +1,6 @@
+services:
+  type: web
+  name: alog_backend-1
+  env: node
+  buildCommand: npm install && npx prisma generate && npm run build
+  startCommand: npm start
