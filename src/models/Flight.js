@@ -1,6 +1,12 @@
-import prisma from '../prisma.js';
+import prisma from "../prisma.js";
 
-export const searchFlight = async ({ from, to, departureTime, arrivalTime, flightClass }) => {
+export const searchFlight = async ({
+  from,
+  to,
+  departureTime,
+  arrivalTime,
+  flightClass,
+}) => {
   const filters = {};
 
   if (from) filters.from = from;
@@ -12,16 +18,27 @@ export const searchFlight = async ({ from, to, departureTime, arrivalTime, fligh
   return await prisma.flight.findMany({
     where: {
       AND: [
-        ...Object.entries(filters).map(([key, value]) => ({ [key]: value }))
-      ]
-    }
+        ...Object.entries(filters).map(([key, value]) => ({ [key]: value })),
+      ],
+    },
   });
 };
 
 export const getAllFlights = async () => {
-    return await prisma.flight.findMany();
-  };
-  
-  export const getFlightById = async (id) => {
-    return await prisma.flight.findUnique({ where: { id } });
-  };
+  return await prisma.flight.findMany();
+};
+
+export const getFlightById = async (id) => {
+  return await prisma.flight.findUnique({ where: { id } });
+};
+
+export const createFlights = async (flightsData) => {
+  const createdFlights = [];
+
+  for (const data of flightsData) {
+    const createdFlight = await prisma.flight.create({ data });
+    createdFlights.push(createdFlight);
+  }
+
+  return createdFlights;
+};
