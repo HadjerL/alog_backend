@@ -19,6 +19,9 @@
     "dev": "nodemon src/app.js"
   
     },
+    "prisma": {
+      "schema": "path/to/your/schema.prisma"
+    },
   
     "dependencies": {
   
