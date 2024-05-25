@@ -1,12 +1,53 @@
+# Fake Airline Apis 1
 
-to create an initial migration :
-npx prisma migrate dev --name init
+Fake airline apis
 
-npx prisma db push
+## Documentation
 
-After changing in the shema:
+The complete documentation for this project can be found [here](https://documenter.getpostman.com/view/25077893/2sA3QqfsgC).
+
+## Getting Started
+
+Follow these instructions to get the project up and running on your local machine.
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- Yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your_username/your_project.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd your_project
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Database Migration
+
+To apply database migrations, run:
+
+```bash
 npx prisma generate
+```
 
-npx prisma migrate dev --name <migration-name>
+### Running the Server
 
-npx prisma db push
+To start the development server, run:
+
+```bash
+npm run dev
+```
