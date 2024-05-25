@@ -1,6 +1,6 @@
 # Fake Airline Apis 1
 
-Fake airline apis
+Fake airline APIs of a flight reservation system under software architectures course
 
 ## Documentation
 
