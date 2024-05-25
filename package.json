@@ -20,7 +20,7 @@
   
     },
     "prisma": {
-        "schema": "path/to/your/schema.prisma"
+      "schema": "src/prisma/schema.prisma"
     },
   
     "dependencies": {
